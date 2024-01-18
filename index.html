@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trivia!</title>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>trivia!</h1>
+            <p>good luck</p>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Question 1 </h2>
+                <hr>
+
+                <h3>Who painted the Mona Lisa?</h3>
+                <p id="status"></p>
+
+                <button id="incorrect">Pablo Picasso</button>
+                <button id="correct">Leonardo da Vinci</button>
+                <button id="incorrect">Michelangelo</button>
+                <button id="incorrect">Vincent van Gogh</button>
+
+                <script>
+                    let answered1 = false;
+                    let status = document.querySelector('#status');
+                    let correct = document.querySelector('#correct');
+                    let incorrect = document.querySelectorAll('#incorrect');
+
+                    correct.onclick = function()
+                    {
+                        if(!answered1){
+
+                            status.innerHTML = "Correct! The Mona Lisa painting is one of the most emblematic portraits in the history of art, where is located at the Louvre. Painted by Leonardo da Vinci in the 16th century, now the art is worth approximately $860 Million.";
+                            status.style.fontFamily = 'Century Gothic';
+                            correct.style.backgroundColor = '#84DCC6';
+                            answered1 = true;
+                        }
+                    };
+
+                    incorrect.forEach(button => {
+                        button.onclick = function(){
+                            if(!answered1){
+                                status.innerHTML = "Incorrect!";
+                                status.style.fontFamily = 'Century Gothic';
+                                button.style.backgroundColor = '#FFA69E';
+                            }
+                        };
+                    });
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Question 2</h2>
+                <hr>
+
+                <h3>What is the largest ocean on Earth?</h3>
+                <p id="status2"></p>
+
+                <form id="myform2">
+                    <input autocomplete="off" type="text" id="value2">
+                    <button type="button" onclick="checkAnswer2()">Check Answer</button>
+                    <span id="tick2" style="color: green;"></span>
+                    <span id="cross2" style="color: red;"></span>
+                </form>
+
+                <script>
+                    let answered2 = false;
+                    function checkAnswer2(){
+                        let status2 = document.querySelector('#status2');
+                        let value2 = document.querySelector('#value2');
+                        let tick2 = document.querySelector('#tick2');
+                        let cross2 = document.querySelector('#cross2');
+
+                        if(value2.value.toLowerCase() === 'pacific'&& !answered2){
+                            value2.style.backgroundColor = '#c6f7ea';
+                            status2.innerHTML = "Correct! Covering approximately 63 million square miles and containing more than half of the free water on Earth, the Pacific is by far the largest of the world's ocean basins. All of the world's continents could fit into the Pacific water.";
+                            status2.style.fontFamily = 'Century Gothic';
+                            answered2 = true;
+
+                            tick2.innerHTML = '✓';
+                            cross2.innerHTML = '';
+                        }
+                        else if (!answered2){
+                            value2.style.backgroundColor = '#ffddda';
+                            status2.innerHTML = 'Incorrect!';
+                            status2.style.fontFamily = 'Century Gothic';
+
+                            cross2.innerHTML = '✗';
+                            tick2.innerHTML = '';
+                        }
+                    }
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Question 3</h2>
+                <hr>
+
+                <h3>What is the capital of Australia?</h3>
+                <p id="status3"></p>
+
+                <button id="incorrect3">Brisbane</button>
+                <button id="incorrect3">Sydney</button>
+                <button id="correct3">Canberra</button>
+                <button id="incorrect3">Melbourne</button>
+
+                <script>
+                    let answered3 = false;
+                    let status3 = document.querySelector('#status3');
+                    let correct3 = document.querySelector('#correct3');
+                    let incorrect3 = document.querySelectorAll('#incorrect3');
+
+                    correct3.onclick = function()
+                    {
+                        if(!answered3){
+                            status3.innerHTML = "Correct! Canberra is a small city of around 450,000 people that sits between Sydney and Melbourne. The site was chosen as the location for Australia's capital in 1908 as a compromise between the two aforementioned cities.";
+                            status3.style.fontFamily = 'Century Gothic';
+                            correct3.style.backgroundColor = '#84DCC6';
+                            answered3 = true;
+                        }
+                    };
+
+                    incorrect3.forEach(button => {
+                        button.onclick = function(){
+                            if(!answered3){
+                                status3.innerHTML = "Incorrect!";
+                                status3.style.fontFamily = 'Century Gothic';
+                                button.style.backgroundColor = '#FFA69E';
+                            }
+                        };
+                    });
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Question 4</h2>
+                <hr>
+
+                <h3>How many lives are cats said to have?</h3>
+                <p id="status4"></p>
+
+                <form id="myform4">
+                    <input autocomplete="off" type="text" id="value4">
+                    <button type="button" onclick="checkAnswer4()">Check Answer</button>
+                    <span id="tick4" style="color: green;"></span>
+                    <span id="cross4" style="color: red;"></span>
+                </form>
+
+                <script>
+                    let answered4 = false;
+                    function checkAnswer4(){
+                        let status4 = document.querySelector('#status4');
+                        let value4 = document.querySelector('#value4');
+                        let tick4 = document.querySelector('#tick4');
+                        let cross4 = document.querySelector('#cross4');
+
+                        if(value4.value.toLowerCase() === 'nine'||value4.value == '9'&& !answered4){
+                            value4.style.backgroundColor = '#c6f7ea';
+                            status4.innerHTML = "Correct! An ancient proverb states, 'A cat has nine lives. For three he plays, for three he strays, and for the last three he stays.' While the origin of this myth is unknown, it's well-known to have been around for a long time.";
+                            status4.style.fontFamily = 'Century Gothic';
+                            answered4 = true;
+
+                            tick4.innerHTML = '✓';
+                            cross4.innerHTML = '';
+                        }
+                        else if (!answered4) {
+                            value4.style.backgroundColor = '#ffddda';
+                            status4.innerHTML = 'Incorrect!';
+                            status4.style.fontFamily = 'Century Gothic';
+
+                            cross4.innerHTML = '✗';
+                            tick4.innerHTML = '';
+                        }
+                    }
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Question 5</h2>
+                <hr>
+
+                <h3>What does “www” stand for in a website browser?</h3>
+                <p id="status5"></p>
+
+                <button id="correct5">World Wide Web</button>
+                <button id="incorrect5">Wild Wild West</button>
+                <button id="incorrect5">Wired Web Wonders</button>
+                <button id="incorrect5">Wide Area Webserver</button>
+
+                <script>
+                    let answered5 = false;
+                    let status5 = document.querySelector('#status5');
+                    let correct5 = document.querySelector('#correct5');
+                    let incorrect5 = document.querySelectorAll('#incorrect5');
+
+                    correct5.onclick = function()
+                    {
+                        if(!answered5){
+                            status5.innerHTML = "Correct! WWW stands for World Wide Web, and it's used mostly as a prefix. However, it does indicate that a given website uses HTTP to communicate.";
+                            status5.style.fontFamily = 'Century Gothic';
+                            correct5.style.backgroundColor = '#84DCC6';
+                            answered5 = true;
+                        }
+                    };
+
+                    incorrect5.forEach(button => {
+                        button.onclick = function(){
+                            if(!answered5){
+                                status5.innerHTML = "Incorrect!";
+                                status5.style.fontFamily = 'Century Gothic';
+                                button.style.backgroundColor = '#FFA69E';
+                            }
+                        };
+                    });
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Question 6</h2>
+                <hr>
+
+                <h3>How many hearts does an octopus have?</h3>
+                <p id="status6"></p>
+
+                <form id="myform6">
+                    <input autocomplete="off" type="text" id="value6">
+                    <button type="button" onclick="checkAnswer6()">Check Answer</button>
+                    <span id="tick6" style="color: green;"></span>
+                    <span id="cross6" style="color: red;"></span>
+                </form>
+
+                <script>
+                    let answered6 = false;
+                    function checkAnswer6(){
+                        let status6 = document.querySelector('#status6');
+                        let value6 = document.querySelector('#value6');
+                        let tick6 = document.querySelector('#tick6');
+                        let cross6 = document.querySelector('#cross6');
+
+                        if(value6.value.toLowerCase() === 'three' || value6.value == '3'&& !answered6){
+                            value6.style.backgroundColor = '#c6f7ea';
+                            status6.innerHTML = "Correct! An octopus has not one, but three hearts. Two of them — the branchial hearts, pump blood to the gills where it picks up oxygen. The third, or systemic heart, pumps the oxygenated blood around the body.";
+                            status6.style.fontFamily = 'Century Gothic';
+                            answered6 = true;
+
+                            tick6.innerHTML = '✓';
+                            cross6.innerHTML = '';
+                        }
+                        else if (!answered6){
+                            value6.style.backgroundColor = '#ffddda';
+                            status6.innerHTML = 'Incorrect!';
+                            status6.style.fontFamily = 'Century Gothic';
+
+                            cross6.innerHTML = '✗';
+                            tick6.innerHTML = '';
+                        }
+                    }
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Question 7</h2>
+                <hr>
+
+                <h3>According to Greek myth who had snakes for hair?</h3>
+                <p id="status7"></p>
+
+                <button id="incorrect7">Venus</button>
+                <button id="incorrect7">Aphrodite</button>
+                <button id="incorrect7">Artemia</button>
+                <button id="correct7">Medusa</button>
+
+                <script>
+                    let answered7 = false;
+                    let status7 = document.querySelector('#status7');
+                    let correct7 = document.querySelector('#correct7');
+                    let incorrect7 = document.querySelectorAll('#incorrect7');
+
+                    correct7.onclick = function()
+                    {
+                        if(!answered7){
+                            status7.innerHTML = "Correct! Medusa is generally described as a human female with living snakes in place of hair. Her appearance was so hideous that anyone who looked upon her was turned to stone.";
+                            status7.style.fontFamily = 'Century Gothic';
+                            correct7.style.backgroundColor = '#84DCC6';
+                            answered7 = true;
+                        }
+                    };
+
+                    incorrect7.forEach(button => {
+                        button.onclick = function(){
+                            if(!answered7){
+                                status7.innerHTML = "Incorrect!";
+                                status7.style.fontFamily = 'Century Gothic';
+                                button.style.backgroundColor = '#FFA69E';
+                            }
+                        };
+                    });
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Question 8</h2>
+                <hr>
+
+                <h3>Which country is the largest in the world?</h3>
+                <p id="status8"></p>
+
+                <form id="myform8">
+                    <input autocomplete="off" type="text" id="value8">
+                    <button type="button" onclick="checkAnswer8()">Check Answer</button>
+                    <span id="tick8" style="color: green;"></span>
+                    <span id="cross8" style="color: red;"></span>
+                </form>
+
+                <script>
+                    let answered8 = false;
+                    function checkAnswer8(){
+                        let status8 = document.querySelector('#status8');
+                        let value8 = document.querySelector('#value8');
+                        let tick8 = document.querySelector('#tick8');
+                        let cross8 = document.querySelector('#cross8');
+
+                        if(value8.value.toLowerCase() === 'russia' && !answered8){
+                            value8.style.backgroundColor = '#c6f7ea';
+                            status8.innerHTML = "Correct! Russia is the largest country in the world by area, extends across eleven time zones, and shares land boundaries with fourteen countries.";
+                            status8.style.fontFamily = 'Century Gothic';
+                            answered8 = true;
+
+                            tick8.innerHTML = '✓';
+                            cross8.innerHTML = '';
+                        }
+                        else if (!answered8){
+                            value8.style.backgroundColor = '#ffddda';
+                            status8.innerHTML = 'Incorrect!';
+                            status8.style.fontFamily = 'Century Gothic';
+
+                            cross8.innerHTML = '✗';
+                            tick8.innerHTML = '';
+                        }
+                    }
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Question 9</h2>
+                <hr>
+
+                <h3>Who is considered the "Father of Relativity?"</h3>
+                <p id="status9"></p>
+
+                <button id="incorrect9">Isaac Newton</button>
+                <button id="correct9">Albert Einstein</button>
+                <button id="incorrect9">Galileo Galilei</button>
+                <button id="incorrect9">Max Planck</button>
+
+                <script>
+                    let answered9 = false;
+                    let status9 = document.querySelector('#status9');
+                    let correct9 = document.querySelector('#correct9');
+                    let incorrect9 = document.querySelectorAll('#incorrect9');
+
+                    correct9.onclick = function()
+                    {
+                        if(!answered9){
+                            status9.innerHTML = "Correct! Albert Einstein, German-Swiss physicist and Nobel laureate, is best known for the special and general theories of relativity and for his bold hypothesis concerning the particle nature of light. He is perhaps the most famous scientist of the 20th century.";
+                            status9.style.fontFamily = 'Century Gothic';
+                            correct9.style.backgroundColor = '#84DCC6';
+                            answered9 = true;
+                        }
+                    };
+
+                    incorrect9.forEach(button => {
+                        button.onclick = function(){
+                            if(!answered9){
+                                status9.innerHTML = "Incorrect!";
+                                status9.style.fontFamily = 'Century Gothic';
+                                button.style.backgroundColor = '#FFA69E';
+                            }
+                        };
+                    });
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Question 10</h2>
+                <hr>
+
+                <h3>In what year did World War II end?</h3>
+                <p id="status10"></p>
+
+                <form id="myform10">
+                    <input autocomplete="off" type="text" id="value10">
+                    <button type="button" onclick="checkAnswer10()">Check Answer</button>
+                    <span id="tick10" style="color: green;"></span>
+                    <span id="cross10" style="color: red;"></span>
+                </form>
+
+                <script>
+                    let answered10 = false;
+                    function checkAnswer10(){
+                        let status10 = document.querySelector('#status10');
+                        let value10 = document.querySelector('#value10');
+                        let tick10 = document.querySelector('#tick10');
+                        let cross10 = document.querySelector('#cross10');
+
+                        if(value10.value == '1945' && !answered10){
+                            value10.style.backgroundColor = '#c6f7ea';
+                            status10.innerHTML = "Correct! Russia is the largest country in the world by area, extends across eleven time zones, and shares land boundaries with fourteen countries.";
+                            status10.style.fontFamily = 'Century Gothic';
+                            answered10 = true;
+
+                            tick10.innerHTML = '✓';
+                            cross10.innerHTML = '';
+                        }
+                        else if (!answered10){
+                            value10.style.backgroundColor = '#ffddda';
+                            status10.innerHTML = 'Incorrect!';
+                            status10.style.fontFamily = 'Century Gothic';
+
+                            cross10.innerHTML = '✗';
+                            tick10.innerHTML = '';
+                        }
+                    }
+                </script>
+            </div>
+
+            <div class="section">
+                <p style="font-size: medium; font-family: arial black; margin-top: 10px;">That's it for now!</p>
+                <p style="font-size: small; font-family: century gothic; margin-top: -10px;">Designed by Mirjana Arsenoska</p>
+            </div>
+        </div>
+    </body>
+</html>
